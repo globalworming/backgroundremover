@@ -10,6 +10,8 @@ apply to a directory
 IMAGE_DIR="${HOME}/Downloads/bgtest"
 docker run -it --rm -v "${IMAGE_DIR}:/tmp" bgremover:latest -if /tmp -of /tmp/out
 ```
+![96eab6a7-4b47-4c1d-8c09-d391f08fc344](https://github.com/user-attachments/assets/9cf760a3-921b-429c-b470-fd978e66b01b)
+![output_96eab6a7-4b47-4c1d-8c09-d391f08fc344](https://github.com/user-attachments/assets/f7d36fb9-f8b2-4e5b-9f7b-673ddf66f763)
 
 ![WhatsApp Image 2025-05-21 at 13 59 13](https://github.com/user-attachments/assets/2de528dc-5b3a-487b-bc3f-a5a8d47d73f9)
 ![output_WhatsApp Image 2025-05-21 at 13 59 13](https://github.com/user-attachments/assets/a7c152e4-0ee7-4adf-befc-f7fc257e55b5)
