@@ -1,24 +1,22 @@
 FROM continuumio/miniconda3:23.5.2-0 as builder
+WORKDIR /usr/local/src
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-      apt-transport-https \
-      bash \
-      build-essential \
-      git
+        apt-transport-https \
+        bash \
+        libgomp1 \
+        libstdc++6 \
+        build-essential \
+        git \
+        ffmpeg
 
-RUN conda install 'ffmpeg>=4.4.0' -c conda-forge
-RUN conda install pytorch torchvision torchaudio cpuonly -c pytorch
+COPY requirements.txt .
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
 
-WORKDIR /usr/local/src
 COPY . .
-
 RUN pip --no-cache-dir -v install .
 
-# optimize layers
-FROM debian:bullseye-slim
-COPY --from=builder /opt/conda /opt/conda
-ENV PATH=/opt/conda/bin:$PATH
 
-WORKDIR /tmp
 ENTRYPOINT ["python", "-m", "backgroundremover.cmd.cli"]
