@@ -1,3 +1,5 @@
+more info at https://github.com/nadermx/backgroundremover
+
 ### Installation using Docker
 ```bash
 git clone https://github.com/globalworming/backgroundremover.git
