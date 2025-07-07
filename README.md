@@ -3,14 +3,10 @@
 git clone https://github.com/nadermx/backgroundremover.git
 cd backgroundremover
 docker build -t bgremover .
-alias backgroundremover='docker run -it --rm -v "$(pwd):/tmp" bgremover:latest'
 ```
 ### Usage as a cli
-## Image
-
-Remove the background from a local file image
-
+apply to a directory
 ```bash
-cd $dir_with_images
-backgroundremover -if /tmp -of /tmp/out
+IMAGE_DIR="${HOME}/Downloads/bgtest"
+docker run -it --rm -v "${IMAGE_DIR}:/tmp" bgremover:latest -if /tmp -of /tmp/out
 ```
