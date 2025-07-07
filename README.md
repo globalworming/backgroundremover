@@ -1,6 +1,6 @@
 ### Installation using Docker
 ```bash
-git clone https://github.com/nadermx/backgroundremover.git
+git clone https://github.com/globalworming/backgroundremover.git
 cd backgroundremover
 docker build -t bgremover .
 ```
